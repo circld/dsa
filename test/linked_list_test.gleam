@@ -1,7 +1,7 @@
-import linked_list.{Node, Empty}
 import gleam/int
 import gleeunit
 import gleeunit/should
+import linked_list.{Empty, Node}
 
 pub fn main() {
   gleeunit.main()

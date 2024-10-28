@@ -1,5 +1,6 @@
 //// implement singly linked list + operations defined on it
 //// https://www.geeksforgeeks.org/singly-linked-list-tutorial/
+
 pub type Node(a) {
   Node(value: a, next: Node(a))
   Empty
@@ -39,7 +40,7 @@ pub fn search(node: Node(a), value: a) -> Bool {
 
 pub fn length(node: Node(a)) -> Int {
   node
-  |> fold(0, fn(b, _) {b + 1})
+  |> fold(0, fn(b, _) { b + 1 })
 }
 
 fn fold(node: Node(a), acc: b, f: fn(b, a) -> b) -> b {
