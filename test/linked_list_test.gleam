@@ -114,7 +114,7 @@ pub fn delete_last_empty_test() {
 
 pub fn delete_at_test() {
   linked_list.new([1, 2, 3])
-  |> linked_list.delete_at(0)
+  |> linked_list.delete_at(1)
   |> should.equal(Node(1, Node(3, Empty)))
 }
 
