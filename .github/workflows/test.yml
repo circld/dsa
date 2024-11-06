@@ -11,7 +11,7 @@ jobs:
   test_functional:
     runs-on: ubuntu-latest
     defaults:
-      runs:
+      run:
         working-directory: ./src/functional
     steps:
       - uses: actions/checkout@v4
