@@ -8,8 +8,11 @@ on:
   pull_request:
 
 jobs:
-  test:
+  test_functional:
     runs-on: ubuntu-latest
+    defaults:
+      runs:
+        working-directory: ./src/functional
     steps:
       - uses: actions/checkout@v4
       - uses: erlef/setup-beam@v1
