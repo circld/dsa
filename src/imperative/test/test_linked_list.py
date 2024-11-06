@@ -9,4 +9,4 @@ def test_traverse(capsys):
     linked_list = under_test.new([1, 2, 3])
     under_test.traverse(linked_list)
     captured = capsys.readouterr()
-    assert captured.out == "1 2 3"
+    assert captured.out == "1 2 3\n"
