@@ -1,7 +1,7 @@
-import linked_list.{Node, Empty}
 import gleam/int
 import gleeunit
 import gleeunit/should
+import linked_list.{Empty, Node}
 
 pub fn main() {
   gleeunit.main()
@@ -74,4 +74,58 @@ pub fn append_into_empty_test() {
   linked_list.new([])
   |> linked_list.append(5)
   |> should.equal(Node(5, Empty))
+}
+
+pub fn insert_into_test() {
+  linked_list.new([1, 2, 3])
+  |> linked_list.insert(5, 1)
+  |> should.equal(Node(1, Node(5, Node(2, Node(3, Empty)))))
+}
+
+pub fn insert_into_empty_test_zero_index() {
+  linked_list.new([])
+  |> linked_list.insert(5, 0)
+  |> should.equal(Node(5, Empty))
+}
+
+pub fn insert_into_empty_test() {
+  linked_list.new([])
+  |> linked_list.insert(5, 5)
+  |> should.equal(Node(5, Empty))
+}
+
+pub fn delete_first_test() {
+  linked_list.new([1, 2, 3])
+  |> linked_list.delete_first
+  |> should.equal(Node(2, Node(3, Empty)))
+}
+
+pub fn delete_first_empty_test() {
+  linked_list.new([])
+  |> linked_list.delete_first
+  |> should.equal(Empty)
+}
+
+pub fn delete_last_test() {
+  linked_list.new([1, 2, 3])
+  |> linked_list.delete_last
+  |> should.equal(Node(1, Node(2, Empty)))
+}
+
+pub fn delete_last_empty_test() {
+  linked_list.new([])
+  |> linked_list.delete_last
+  |> should.equal(Empty)
+}
+
+pub fn delete_at_test() {
+  linked_list.new([1, 2, 3])
+  |> linked_list.delete_at(1)
+  |> should.equal(Node(1, Node(3, Empty)))
+}
+
+pub fn delete_at_empty_test() {
+  linked_list.new([])
+  |> linked_list.delete_at(5)
+  |> should.equal(Empty)
 }
